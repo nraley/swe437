@@ -1,0 +1,3 @@
+This is the Documentation Log for Assignment 2:
+
+The process of commenting out all code pertaining to "servlet" was actually quite straightforward, but what hung us up was the fact that none of the methods needed not to be static, but (not having used java in a while) we tried to resolve this by making the main method not static. This problem cascaded by keeping us from being able to run the program due to classpath problems, so we eventually solved this by making all of the arithmetic methods static. Since the main class is never instantiated (to our knowledge) there is no good reason why the arithmetic methods shouldn't be static.
