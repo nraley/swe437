@@ -1,4 +1,3 @@
-package swe437;
 
 /** *****************************************************************
     conversion.java
@@ -39,7 +38,7 @@ import static jdk.nashorn.internal.objects.Global.println;
 public class conversion //extends HttpServlet
 {
 
-    public void main(String[]args){
+    public static void main(String[]args){
         String test = "5";
         float testResult = convertF2C(test);
         System.out.println(testResult);
@@ -346,7 +345,7 @@ public class conversion //extends HttpServlet
  *  Conversion methods below
  *  14 methods, 2 for each pair of units
 ********************************************************* */
-private float convertF2C (String FAsStr)
+private static float convertF2C (String FAsStr)
 {  // Convert farenheit to celsius
    float num1, num2; // temporary variables
    int n; // temporary variable
@@ -362,7 +361,7 @@ private float convertF2C (String FAsStr)
    return (num2);
 }
 
-private float convertC2F (String CAsStr)
+private static float convertC2F (String CAsStr)
 {  // Convert celsius to farenheit
    float num1, num2; // temporary variables
    int n; // temporary variable
@@ -379,7 +378,7 @@ private float convertC2F (String CAsStr)
 }
 
 // small distance
-private float convertIn2Cm (String inAsStr)
+private static float convertIn2Cm (String inAsStr)
 {  // Convert inches to centimeters
    float num1, num2; // temporary variables
    int n; // temporary variable
@@ -395,7 +394,7 @@ private float convertIn2Cm (String inAsStr)
    return(num2);
 }
 
-private float convertCm2In (String cmAsStr)
+private static float convertCm2In (String cmAsStr)
 {  // Convert centimeters to inches
    float num1, num2; // temporary variables
    int n; // temporary variable
@@ -412,7 +411,7 @@ private float convertCm2In (String cmAsStr)
 }
 
 // medium distance
-private float convertF2M (String ftAsStr)
+private static float convertF2M (String ftAsStr)
 {  // Convert feet to meters
    float num1, num2; // temporary variables
    int n; // temporary variable
@@ -428,7 +427,7 @@ private float convertF2M (String ftAsStr)
    return(num2);
 }
 
-private float convertM2F (String mAsStr)
+private static float convertM2F (String mAsStr)
 {  // Convert meters to feet
    float num1, num2; // temporary variables
    int n; // temporary variable
@@ -445,7 +444,7 @@ private float convertM2F (String mAsStr)
 }
 
 // large distance
-private float convertM2K (String miAsStr)
+private static float convertM2K (String miAsStr)
 {  // Convert miles to kilometers
    float num1, num2; // temporary variables
    int n; // temporary variable
@@ -461,7 +460,7 @@ private float convertM2K (String miAsStr)
    return(num2);
 }
 
-private float convertK2M (String kmAsStr)
+private static float convertK2M (String kmAsStr)
 {  // Convert kilometers to miles
    float num1, num2; // temporary variables
    int n; // temporary variable
@@ -478,7 +477,7 @@ private float convertK2M (String kmAsStr)
 }
 
 // volume
-private float convertG2L (String galAsStr)
+private static float convertG2L (String galAsStr)
 {  // Convert gallons to liters
    float num1, num2; // temporary variables
    int n; // temporary variable
@@ -494,7 +493,7 @@ private float convertG2L (String galAsStr)
    return(num2);
 }
 
-private float convertL2G (String LAsStr)
+private static float convertL2G (String LAsStr)
 {  // Convert liters to gallons
    float num1, num2; // temporary variables
    int n; // temporary variable
@@ -508,7 +507,7 @@ private float convertL2G (String LAsStr)
 }
 
 // small weight
-private float convertOz2G (String ozAsStr)
+private static float convertOz2G (String ozAsStr)
 {  // Convert ounces to grams
    float num1, num2; // temporary variables
    int n; // temporary variable
@@ -524,7 +523,7 @@ private float convertOz2G (String ozAsStr)
    return(num2);
 }
 
-private float convertG2Oz (String gAsStr)
+private static float convertG2Oz (String gAsStr)
 {  // Convert grams to ounces
    float num1, num2; // temporary variables
    int n; // temporary variable
@@ -541,7 +540,7 @@ private float convertG2Oz (String gAsStr)
 }
 
 // medium weight
-private float convertLb2K (String lbAsStr)
+private static float convertLb2K (String lbAsStr)
 {  // Convert pounds to kilograms
    float num1, num2; // temporary variables
    int n; // temporary variable
@@ -557,7 +556,7 @@ private float convertLb2K (String lbAsStr)
    return(num2);
 }
 
-private float convertK2Lb (String kgAsStr)
+private static float convertK2Lb (String kgAsStr)
 {  // Convert kilograms to pounds
    float num1, num2; // temporary variables
    int n; // temporary variable
