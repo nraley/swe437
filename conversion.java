@@ -39,9 +39,26 @@ public class conversion //extends HttpServlet
 {
 
     public static void main(String[]args){
-        String test = "5";
-        float testResult = convertF2C(test);
-        System.out.println(testResult);
+        printMenu();
+
+
+
+    }
+
+    public static void printMenu() {
+        System.out.println("(Not So) On-line Measurement Conversion");
+        System.out.println("Welcome! Please enter a number to select that conversion:\n");
+        System.out.println("Fahrenheit (Fº): <----->  Celsius (Cº): \n" +
+                "1. Inch (in):       <----->   Centimeter (cm) \n" +
+                "2. Feet (ft):       <----->   Meter (m) \n" +
+                "3. Mile (mi):       <----->   Kilometer (km) \n" +
+                "4. Gallon (gal):    <----->   Liter (L) \n" +
+                "5. Ounce (oz):      <----->   Gram (g) \n" +
+                "6. Pound (lb):      <----->   Kilogram (kg) \n");
+    }
+
+    public static void enterMessage() {
+        System.out.println("Please enter your desired conversion value.");
     }
 
 ///** *****************************************************
