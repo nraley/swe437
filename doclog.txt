@@ -1,4 +1,5 @@
-This is the Documentation Log for Assignment 2:
+Hand in for Assignment 2
+Documentation Log:
 
 The process of commenting out all code pertaining to "servlet" was actually quite straightforward,
 but what hung us up was the fact that none of the methods needed not to be static, but (not having
@@ -6,3 +7,23 @@ used java in a while) we tried to resolve this by making the main method not sta
 cascaded by keeping us from being able to run the program due to classpath problems, so we eventually
 solved this by making all of the arithmetic methods static. Since the main class is never instantiated
 (to our knowledge) there is no good reason why the arithmetic methods shouldn't be static.
+
+After we commented out everything, Nelson worked on setting up a UI.
+Nelson got the basic functionality of the UI working but the program only ran once, which differed greatly from the experience provided by the web app.
+Following that, Michael and Gabriel worked to get the UI functioning as intended by letting the menu continue working as long as the user wanted.
+Cleaning up the code was what followed as we removed large sections of commented code and useless imports.
+
+
+Description of new UI:
+
+Our new UI for the program is a command line interface.
+Once it is called, it prints out some introductory information.
+Following that it prints a list of possible selections for the user.
+From there the user can input any number, although the program will only work if the user inputs 1-15
+Upon receiving a selection, it asks the user for a number for the conversion.
+Then it prints out the conversion, and the original menu for the user to select again.
+
+
+Maintainability Assessment:
+
+The original programmers made it easy to edit the program by commenting what sections did what and by clearly signposting what each part did with good names and whitespace.
