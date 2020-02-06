@@ -1,4 +1,9 @@
 Collaboration Summary:
 
-Nelson Raley worked on creating the new UI and seperating the original UI and the other code.
-Gabriel Bartholomaus and Michael Pham worked together to get the new UI functioning as expected and testing to make sure the UI did not crash.
+Nelson Raley
+Gabriel Bartholomäus
+Michael Pham
+
+Nelson Raley separated the frontend webapp code from the backend, and created the core new UI by creating a menu for the conversions using a switch statement which selects a conversion and converts the entered value using the selected conversion. He also got the documentation log started and recorded the troubles regarding the methods not being static.
+Gabriel Bartholomaus and Michael Pham worked together to get the new UI functioning as a continual loop that allows the user to enter many more inputs and testing to make sure the UI did not crash under normal inputs.
+Nelson wrote most of the documentation log, Gabriel wrote most of UI description, and Michael wrote most of the maintainability assessment.
