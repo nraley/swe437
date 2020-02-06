@@ -1,0 +1,4 @@
+Collaboration Summary:
+
+Nelson Raley worked on creating the new UI and seperating the original UI and the other code.
+Gabriel Bartholomaus and Michael Pham worked together to get the new UI functioning as expected and testing to make sure the UI did not crash.
