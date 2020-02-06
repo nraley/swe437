@@ -19,6 +19,7 @@ import java.io.*;
 import java.util.*;
 import java.lang.*;
 
+
 import static jdk.nashorn.internal.objects.Global.println;
 
 // conversion class
@@ -41,20 +42,82 @@ public class conversion //extends HttpServlet
     public static void main(String[]args){
         printMenu();
 
+        Scanner menuInput = new Scanner(System.in); //get user input
+        int i = menuInput.nextInt();
 
+        System.out.println("Please enter your value to be converted:");
 
+        Scanner convInput = new Scanner(System.in); //get user input
+        String c = convInput.next();
+
+        System.out.print("Conversion result is: ");
+        switch (i) {
+            case 1:
+                System.out.println(convertF2C(c));
+                break;
+            case 2:
+                System.out.println(convertC2F(c));;
+                break;
+            case 3:
+                System.out.println(convertIn2Cm(c));;
+                break;
+            case 4:
+                System.out.println(convertCm2In(c));;
+                break;
+            case 5:
+                System.out.println(convertCm2In(c));;
+                break;
+            case 6:
+                System.out.println(convertM2F(c));;
+                break;
+            case 7:
+                System.out.println(convertM2K(c));;
+                break;
+            case 8:
+                System.out.println(convertM2K(c));;
+                break;
+            case 9:
+                System.out.println(convertM2K(c));;
+                break;
+            case 10:
+                System.out.println(convertM2K(c));;
+                break;
+            case 11:
+                System.out.println(convertM2K(c));;
+                break;
+            case 12:
+                System.out.println(convertG2Oz(c));;
+                break;
+            case 13:
+                System.out.println(convertLb2K(c));;
+                break;
+            case 14:
+                System.out.println(convertK2Lb(c));;
+                break;
+            default:
+                System.out.println("Please enter a valid menu item.");
+                break;
+        }
     }
 
     public static void printMenu() {
         System.out.println("(Not So) On-line Measurement Conversion");
         System.out.println("Welcome! Please enter a number to select that conversion:\n");
-        System.out.println("Fahrenheit (Fº): <----->  Celsius (Cº): \n" +
-                "1. Inch (in):       <----->   Centimeter (cm) \n" +
-                "2. Feet (ft):       <----->   Meter (m) \n" +
-                "3. Mile (mi):       <----->   Kilometer (km) \n" +
-                "4. Gallon (gal):    <----->   Liter (L) \n" +
-                "5. Ounce (oz):      <----->   Gram (g) \n" +
-                "6. Pound (lb):      <----->   Kilogram (kg) \n");
+        System.out.println("1. Fahrenheit (Fº) <----->  Celsius (Cº) \n" +
+                "2. Celsius (Cº) <----->  Fahrenheit (Fº) \n" +
+                "3. Inch (in)    <----->   Centimeter (cm) \n" +
+                "4. Centimeter (cm)       <----->   Inch (in) \n" +
+                "5. Feet (ft)       <----->   Meter (m) \n" +
+                "6. Meter (m)       <----->   Feet (ft) \n" +
+                "7. Mile (mi)       <----->   Kilometer (km) \n" +
+                "8. Kilometer (km)       <----->   Mile (mi) \n" +
+                "9. Gallon (gal)    <----->   Liter (L) \n" +
+                "10. Liter (L)    <----->   Gallon (gal) \n" +
+                "11. Ounce (oz)      <----->   Gram (g) \n" +
+                "12. Gram (g)      <----->   Ounce (oz) \n" +
+                "13. Pound (lb)      <----->   Kilogram (kg) \n" +
+                "14. Kilogram (kg)      <----->   Pound (lb) \n");
+
     }
 
     public static void enterMessage() {
@@ -132,98 +195,98 @@ public class conversion //extends HttpServlet
 //   out.print   ("  <td><b>Fahrenheit  (F&#186;):</b> ");
 //   out.print   ("  <input type=\"text\" name=\"F\" size=6 value=\"");
 //   // New: Add the value from the newvals container.
-//   if (newvals.getProperty ("F") != null)
+//   if (newvals.getProperty ("F") != c)
 //      out.print (newvals.getProperty ("F"));
 //    out.println ("\"></td>");
 //
 //   out.println ("  <td><-----></td>");
 //   out.println ("  <td><b>Celsius (C&#186;):</b> ");
 //   out.print   ("  <input type=\"text\" name=\"C\" size=6 value=\"");
-//   if (newvals.getProperty ("C") != null)
+//   if (newvals.getProperty ("C") != c)
 //      out.print (newvals.getProperty ("C"));
 //    out.println ("\"></td>");
 //
 //   out.println (" <tr align=right>");
 //   out.println ("  <td><b>Inch (in):</b> ");
 //   out.print   ("  <input type=\"text\" name=\"in\" size=6 value=\"");
-//   if (newvals.getProperty ("in") != null)
+//   if (newvals.getProperty ("in") != c)
 //      out.print (newvals.getProperty ("in"));
 //    out.println ("\"></td>");
 //
 //   out.println ("  <td><-----></td>");
 //   out.println ("  <td><b>Centimeter (cm):</b> ");
 //   out.print   ("  <input type=\"text\" name=\"cm\" size=6 value=\"");
-//   if (newvals.getProperty ("cm") != null)
+//   if (newvals.getProperty ("cm") != c)
 //      out.print (newvals.getProperty ("cm"));
 //    out.println ("\"></td>");
 //
 //   out.println (" <tr align=right>");
 //   out.println ("  <td><b>Feet (ft):</b> ");
 //   out.print   ("  <input type=\"text\" name=\"ft\" size=6 value=\"");
-//   if (newvals.getProperty ("ft") != null)
+//   if (newvals.getProperty ("ft") != c)
 //      out.print (newvals.getProperty ("ft"));
 //    out.println ("\"></td>");
 //
 //   out.println ("  <td><-----></td>");
 //   out.println ("  <td><b>Meter (m):</b> ");
 //   out.print   ("  <input type=\"text\" name=\"m\" size=6 value=\"");
-//   if (newvals.getProperty ("m") != null)
+//   if (newvals.getProperty ("m") != c)
 //      out.print (newvals.getProperty ("m"));
 //    out.println ("\"></td>");
 //
 //   out.println (" <tr align=right>");
 //   out.println ("  <td><b>Mile (mi):</b> ");
 //   out.print   ("  <input type=\"text\" name=\"mi\" size=6 value=\"");
-//   if (newvals.getProperty ("mi") != null)
+//   if (newvals.getProperty ("mi") != c)
 //      out.print (newvals.getProperty ("mi"));
 //    out.println ("\"></td>");
 //
 //   out.println ("  <td><-----></td>");
 //   out.println ("  <td><b>Kilometer (km):</b> ");
 //   out.print   ("  <inpUt type=\"text\" name=\"km\" size=6 value=\"");
-//   if (newvals.getProperty ("km") != null)
+//   if (newvals.getProperty ("km") != c)
 //      out.print (newvals.getProperty ("km"));
 //    out.println ("\"></td>");
 //
 //   out.println (" <tr align=right>");
 //   out.println ("  <td><b>Gallon (gal):</b> ");
 //   out.print   ("  <input type=\"text\" name=\"gal\" size=6 value=\"");
-//   if (newvals.getProperty ("gal") != null)
+//   if (newvals.getProperty ("gal") != c)
 //      out.print (newvals.getProperty ("gal"));
 //    out.println ("\"></td>");
 //
 //   out.println ("  <td><-----></td>");
 //   out.println ("  <td><b>Liter (L):</b> ");
 //   out.print   ("  <input type=\"text\" name=\"L\" size=6 value=\"");
-//   if (newvals.getProperty ("L") != null)
+//   if (newvals.getProperty ("L") != c)
 //      out.print (newvals.getProperty ("L"));
 //    out.println ("\"></td>");
 //
 //   out.println (" <tr align=right>");
 //   out.println ("  <td><b>Ounce (oz):</b> ");
 //   out.print   ("  <input type=\"text\" name=\"oz\" size=6 value=\"");
-//   if (newvals.getProperty ("oz") != null)
+//   if (newvals.getProperty ("oz") != c)
 //      out.print (newvals.getProperty ("oz"));
 //    out.println ("\"></td>");
 //
 //   out.println ("  <td><-----></td>");
 //   out.println ("  <td><b>Gram (g):</b> ");
 //   out.print   ("  <input type=\"text\" name=\"g\" size=6 value=\"");
-//   if (newvals.getProperty ("kg") != null)
+//   if (newvals.getProperty ("kg") != c)
 //      out.print (newvals.getProperty ("g"));
 //    out.println ("\"></td>");
 //
 //   out.println (" <tr align=right>");
 //   out.println ("  <td><b>Pound (lb):</b> ");
 //   out.print   ("  <input type=\"text\" name=\"lb\" size=6 value=\"");
-//   if (newvals.getProperty ("lb") != null)
+//   if (newvals.getProperty ("lb") != c)
 //      out.print (newvals.getProperty ("lb"));
 //    out.println ("\"></td>");
 //
 //   out.println ("  <td><-----></td>");
 //   out.println ("  <td><b>Kilogram (kg):</b> ");
 //   out.print   ("  <input type=\"text\" name=\"kg\" size=6 value=\"");
-//   if (newvals.getProperty ("kg") != null)
+//   if (newvals.getProperty ("kg") != c)
 //      out.print (newvals.getProperty ("kg"));
 //    out.println ("\"></td>");
 //
@@ -284,71 +347,71 @@ public class conversion //extends HttpServlet
 //   Properties newvals = new Properties();
 //
 //   // temperature
-//   if (FAsStr != null && FAsStr.length() > 0)
+//   if (FAsStr != c && FAsStr.length() > 0)
 //   {  // Convert farenheit to celsius
 //      newvals.put("C", String.valueOf(convertF2C(FAsStr)));
 //   }
-//   if  (CAsStr != null && CAsStr.length() > 0)
+//   if  (CAsStr != c && CAsStr.length() > 0)
 //   {  // Convert celsius to farenheit
 //      newvals.put("F", String.valueOf(convertC2F(CAsStr)));
 //   }
 //
 //   // small distance
-//   if  (inAsStr != null && inAsStr.length() > 0)
+//   if  (inAsStr != c && inAsStr.length() > 0)
 //   {  // Convert inches to centimeters
 //      newvals.put("cm", String.valueOf(convertIn2Cm(inAsStr)));
 //   }
-//   if  (cmAsStr != null && cmAsStr.length() > 0)
+//   if  (cmAsStr != c && cmAsStr.length() > 0)
 //   {  // Convert centimeters to inches
 //      newvals.put("cm", String.valueOf(convertCm2In(cmAsStr)));
 //   }
 //
 //   // medium distance
-//   if  (ftAsStr != null && ftAsStr.length() > 0)
+//   if  (ftAsStr != c && ftAsStr.length() > 0)
 //   {  // Convert feet to meters
 //      newvals.put("m", String.valueOf(convertF2M(ftAsStr)));
 //   }
-//   if  (mAsStr != null && mAsStr.length() > 0)
+//   if  (mAsStr != c && mAsStr.length() > 0)
 //   {  // Convert meters to feet
 //      newvals.put("ft", String.valueOf(convertM2F(mAsStr)));
 //   }
 //
 //   // large distance
-//   if  (miAsStr != null && miAsStr.length() > 0)
+//   if  (miAsStr != c && miAsStr.length() > 0)
 //   {  // Convert miles to kilometers
 //      newvals.put("km", String.valueOf(convertM2K(miAsStr)));
 //   }
-//   if  (kmAsStr != null && kmAsStr.length() > 0)
+//   if  (kmAsStr != c && kmAsStr.length() > 0)
 //   {  // Convert kilometers to miles
 //      newvals.put("mi", String.valueOf(convertK2M(kmAsStr)));
 //   }
 //
 //   // volume
-//   if (galAsStr != null && galAsStr.length() > 0)
+//   if (galAsStr != c && galAsStr.length() > 0)
 //   {  // Convert gallons to liters
 //      newvals.put("L", String.valueOf(convertG2L(galAsStr)));
 //   }
-//   if  (LAsStr != null && LAsStr.length() > 0)
+//   if  (LAsStr != c && LAsStr.length() > 0)
 //   {  // Convert liters to gallons
 //      newvals.put("gal", String.valueOf(convertL2G(LAsStr)));
 //   }
 //
 //   // small weight
-//   if  (ozAsStr != null && ozAsStr.length() > 0)
+//   if  (ozAsStr != c && ozAsStr.length() > 0)
 //   {  // Convert ounces to grams
 //      newvals.put("g", String.valueOf(convertOz2G(ozAsStr)));
 //   }
-//   if  (gAsStr != null && gAsStr.length() > 0)
+//   if  (gAsStr != c && gAsStr.length() > 0)
 //   {  // Convert grams to ounces
 //      newvals.put("oz", String.valueOf(convertG2Oz(gAsStr)));
 //   }
 //
 //   // medium weight
-//   if (lbAsStr != null && lbAsStr.length() > 0)
+//   if (lbAsStr != c && lbAsStr.length() > 0)
 //   {  // Convert pounds to kilograms
 //      newvals.put("kg", String.valueOf(convertLb2K(lbAsStr)));
 //   }
-//   if (kgAsStr != null && kgAsStr.length() > 0)
+//   if (kgAsStr != c && kgAsStr.length() > 0)
 //   {  // Convert kilograms to pounds
 //      newvals.put("lb", String.valueOf(convertK2Lb(kgAsStr)));
 //   }
