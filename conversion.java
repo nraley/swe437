@@ -368,5 +368,3 @@ private static float convertK2Lb (String kgAsStr)
    return(num2);
 }
 }
-
-//.

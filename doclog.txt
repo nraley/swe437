@@ -26,5 +26,3 @@ The original programmers made it easy to edit the program by commenting what sec
 The original programmers made it hard to edit the program by using very short function names. For example, the letter M is used in the conversion functions as either Meters or Miles. Since Meters and Miles are both units for distance, this makes functions like F2M() vague. F2M() could either mean feet to meters or feet to miles.
 
 One thing we would do differently if we did the assignment again is to add more test code and check for normal cases. We currently do not check if the user input is a string or int. The program only accepts int or else it will crash.
-
-.
