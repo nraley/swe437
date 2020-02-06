@@ -1,13 +1,17 @@
-
 /** *****************************************************************
     conversion.java
     Converts various measures from one unit to another
-
+    
+    Original webapp:
     @author Jeff Offutt & Ren Li
 
         @version 1.0    October 2000
         @version 2.0    June 2015
         @version 2.1    January 2020
+
+    Command line UI modification:
+    @author Nelson Raley, Gabriel Bartholomäus-Cabezas, Michael Pham
+        @version 1.0 February 6 2020
 ********************************************************************* */
 
 
@@ -21,6 +25,7 @@ public class conversion
         System.out.println("(Not So) On-line Measurement Conversion"); // on first run, print menu
         printMenu(); // print menu will ask for number between 1 and 14
 
+        // Known error, check for strings, only allow ints
         Scanner menuInput = new Scanner(System.in); //get user input
         int i = Integer.parseInt(menuInput.nextLine());
         // user should put in a number between 1 and 14, else the while loop is not entered.
@@ -362,5 +367,4 @@ private static float convertK2Lb (String kgAsStr)
    num2 = (float) (n / (float)100.0);
    return(num2);
 }
-
 }
