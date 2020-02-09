@@ -370,9 +370,47 @@ public class conversion
 
     private static float convertMphKmph (String inputAsStr)
     {
+//        String Mph = "Mph";
+//        String Kmph = "Kmph";
         float num1, num2; // temporary variables
+        num2 = 1;
         int n;
 
         return (num2);
     }
+
+    private static float rounder (float preRounded)
+    {
+        System.out.println("To what decimal point would you like your result rounded?");
+        System.out.println("Please enter an integer 1-4:");
+
+        Scanner roundingInput = new Scanner(System.in); //get user input
+        int i = Integer.parseInt(roundingInput.nextLine());
+
+        switch (i) {
+            case 1:
+                return 1;   //rounded to 1 decimal place
+            case 2:
+                return 2;   //rounded to 2 decimal places
+            case 3:
+                return 3;   //rounded to 3 decimal places
+            case 4:
+                return 4;   //rounded to 4 decimal places
+            default:
+                System.out.println("Please enter an integer between 1 and 4."); //errmsg
+                break;
+        }
+        return 0;
+    }
+
+//    private static float directionHandler (String unitA, String unitB)    //method for determining which conversion direction is desired,
+//    {                                                                     //assuming we halve the number of conversion methods and make each do both directions
+//        System.out.println("Please select your desired conversion direction:");
+//        System.out.println("1." + unitA + "to" + unitB);
+//        System.out.println("2." + unitB + "to" + unitA);
+//
+//        Scanner menuInput = new Scanner(System.in); //get user input
+//        int i = Integer.parseInt(menuInput.nextLine());
+//
+//    }
 }
