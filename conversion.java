@@ -12,8 +12,13 @@
     Command line UI modification:
     @author Nelson Raley, Gabriel Bartholomäus-Cabezas, Michael Pham
         @version 1.0 February 6 2020
+        @version 1.1 --
 ********************************************************************* */
 
+/**
+ * Known Errors:
+ *  - Scanner use only allows ints, another input type will crash
+ */
 
 // Import Java Libraries
 import java.util.*;
@@ -25,7 +30,6 @@ public class conversion
         System.out.println("(Not So) On-line Measurement Conversion"); // on first run, print menu
         printMenu(); // print menu will ask for number between 1 and 14
 
-        // Known error, check for strings, only allow ints
         Scanner menuInput = new Scanner(System.in); //get user input
         int i = Integer.parseInt(menuInput.nextLine());
         // user should put in a number between 1 and 14, else the while loop is not entered.
