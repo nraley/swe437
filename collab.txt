@@ -4,4 +4,4 @@ Nelson Raley
 Gabriel Bartholomäus
 Michael Pham
 
-Gabriel Bartholomaus removed the redundant rounding code and added a method that allowed for rounding to be handled once.
+Gabriel Bartholomaus removed the redundant rounding code and added a method that allowed for rounding to be handled once with the precision specified by the user.

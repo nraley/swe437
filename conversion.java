@@ -28,10 +28,14 @@ public class conversion
 
     public static void main(String[]args){
         System.out.println("(Not So) On-line Measurement Conversion"); // on first run, print menu
-        printMenu(); // print menu will ask for number between 1 and 14
-
         Scanner menuInput = new Scanner(System.in); //get user input
+
+        System.out.println("For your precision, please Enter a number between 1 and 4:");
+        int precision = Integer.parseInt(menuInput.nextLine());
+
+        printMenu(); // print menu will ask for number between 1 and 14
         int i = Integer.parseInt(menuInput.nextLine());
+
         // user should put in a number between 1 and 14, else the while loop is not entered.
         while ((i > 0) && (i < 15))  {
             // once an option chosen, ask the user what number they want to convert
@@ -114,16 +118,15 @@ public class conversion
                     System.out.println("Please enter a valid menu item.");
                     break;
             }
-            retVal = roundToInput(retVal);
-            System.out.println(retVal);
-            System.out.println("\n");
+            printResult(retVal, precision);
             printMenu();
             i = Integer.parseInt(menuInput.nextLine());
         }
         menuInput.close();
     }
 
-    public static void printMenu() {
+    public static void printMenu()
+    {
         System.out.println("Please choose between options 1 to 14 to convert a value:");
         System.out.println(
                 "1. Fahrenheit (Fº)     ----->     Celsius (Cº) \n" +
@@ -144,14 +147,23 @@ public class conversion
 
     }
 
-    public static float roundToInput(float input) 
-    {   // sets float to specific decimal point
-        float result = (float) 0.0;
-        float rounder = (float) 100.0;
-        // alter the 100.0 for user input
-        result = (float) (Math.round(input * rounder) / rounder);
-        return result;
+    // Prints the result of conversion with a level of precision specified by the user
+    public static void printResult(float input, float precision)
+    {
+        if (precision == 4) {
+            System.out.println(String.format("%.4f", input));
+        } else if (precision == 3) {
+            System.out.println(String.format("%.3f", input));
+        } else if (precision == 2) {
+            System.out.println(String.format("%.2f", input));
+        } else if (precision == 1) {
+            System.out.println(String.format("%.1f", input));
+        } else {
+            System.out.println("Precision not properly set. Please exit and reset.");
+        }
+        System.out.println('\n');
     }
+
 /** *****************************************************
  *  Conversion methods below
  *  14 methods, 2 for each pair of units
@@ -241,30 +253,6 @@ public class conversion
         int n;
 
         return (num2);
-    }
-
-    private static float rounder (float preRounded)
-    {
-        System.out.println("To what decimal point would you like your result rounded?");
-        System.out.println("Please enter an integer 1-4:");
-
-        Scanner roundingInput = new Scanner(System.in); //get user input
-        int i = Integer.parseInt(roundingInput.nextLine());
-
-        switch (i) {
-            case 1:
-                return 1;   //rounded to 1 decimal place
-            case 2:
-                return 2;   //rounded to 2 decimal places
-            case 3:
-                return 3;   //rounded to 3 decimal places
-            case 4:
-                return 4;   //rounded to 4 decimal places
-            default:
-                System.out.println("Please enter an integer between 1 and 4."); //errmsg
-                break;
-        }
-        return 0;
     }
 
 //    private static float directionHandler (String unitA, String unitB)    //method for determining which conversion direction is desired,
