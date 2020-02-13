@@ -6,9 +6,9 @@ Michael Pham
 
 Version 1.1 Collaboration Summary:
 
+Nelson started out by outlining changes and started discussion on how we should go about modifying and streamlining the preexisting conversion methods.
 Gabriel Bartholomaus removed the redundant rounding code and added a method that allowed for rounding to be handled once with the precision specified by the user.
 Michael Pham refactored the convertX2Y() methods to eliminate as much duplicated functionality as possible, added new conversions between miles per hour and kilometers per hour, updated the menu, added precision level 0, and changed some small things to make things more maintainable.
 
 Where to access files:
-
-The GitHub repository is set to private, but the source files can be found in one of the member's blackboard submissions.
+https://github.com/nraley/swe437
