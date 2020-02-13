@@ -181,7 +181,7 @@ public class Conversion {
 
     // Prints the result of conversion with a level of precision specified by the
     // user
-    public static void printResult(double input, double precision) {
+    public static void printResult(double input, int precision) {
         if (precision == 4) {
             System.out.println(String.format("%.4f", input));
         } else if (precision == 3) {
@@ -190,6 +190,8 @@ public class Conversion {
             System.out.println(String.format("%.2f", input));
         } else if (precision == 1) {
             System.out.println(String.format("%.1f", input));
+        } else if (precision == 0) {
+            System.out.println(String.format("%.0f", input));
         } else {
             System.out.println("Precision not properly set. Please exit and reset.");
         }
