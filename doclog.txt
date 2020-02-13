@@ -1,12 +1,24 @@
 Hand in for Assignment 3
 
 Documentation Log:
-
+Nathan began work on the program by adding in skeleton methods for us to fill in later.
+Gabriel then went through and removed the redundancy within the conversion methods and added a way to handle precision for the output.
+Michael followed that by consolidating the conversion functions together.
 
 
 Description of new UI:
-
+The overall UI has not changed.
+A few new lines of output and required inputs have been added.
+These ask the user for how much precision they want on their next conversion.
 
 
 Maintainability Assessment:
+Due to all the redundancy created and left behind by the original programmers, there was a lot that had to be cleaned up.
+Likewise, we had created spaces and functions in our previous version that needed to be altered.
+While we knew we would have to change it, it did lead to some problems due to us not having settled on a clear coding convention.
 
+On the other side, due to how much was repeated, it was easy to figure out what could be safely removed without altering the intended functionality.
+Similarily, on our side, we had things laid out rather clearly in the program space so finding areas to add things in was easy.
+
+In the future, we could have settled on a clear coding convention beforehand so speed up readability.
+We could also add comments and whitespace around areas that do specific things (ie. this prints the menu, this reads input, etc.).
