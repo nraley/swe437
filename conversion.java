@@ -63,73 +63,83 @@ public class Conversion {
             case 1:
                 System.out.println("Selected option is Fahrenheit to Celsius");
                 System.out.print("Conversion result is: ");
-                retVal = convertF2C(userInput);
+                retVal = convertUnits(userInput, 1);
                 break;
             case 2:
                 System.out.println("Selected option is Celsius to Fahrenheit");
                 System.out.print("Conversion result is: ");
-                retVal = convertC2F(userInput);
+                retVal = convertUnits(userInput, 2);
                 break;
             case 3:
                 System.out.println("Selected option is Inches to Centimeters");
                 System.out.print("Conversion result is: ");
-                retVal = convertIn2Cm(userInput);
+                retVal = convertUnits(userInput, 3);
                 break;
             case 4:
                 System.out.println("Selected option is Centimeters to Inches");
                 System.out.print("Conversion result is: ");
-                retVal = convertCm2In(userInput);
+                retVal = convertUnits(userInput, 4);
                 break;
             case 5:
                 System.out.println("Selected option is Feet to Meters");
                 System.out.print("Conversion result is: ");
-                retVal = convertF2M(userInput);
+                retVal = convertUnits(userInput, 5);
                 break;
             case 6:
                 System.out.println("Selected option is Meters to Feet");
                 System.out.print("Conversion result is: ");
-                retVal = convertM2F(userInput);
+                retVal = convertUnits(userInput, 6);
                 break;
             case 7:
                 System.out.println("Selected option is Miles to Kilometers");
                 System.out.print("Conversion result is: ");
-                retVal = convertM2K(userInput);
+                retVal = convertUnits(userInput, 7);
                 break;
             case 8:
                 System.out.println("Selected option is Kilometers to Miles");
                 System.out.print("Conversion result is: ");
-                retVal = convertK2M(userInput);
+                retVal = convertUnits(userInput, 8);
                 break;
             case 9:
                 System.out.println("Selected option is Gallons to Liters");
                 System.out.print("Conversion result is: ");
-                retVal = convertG2L(userInput);
+                retVal = convertUnits(userInput, 9);
                 break;
             case 10:
                 System.out.println("Selected option is Liters to Gallons");
                 System.out.print("Conversion result is: ");
-                retVal = convertL2G(userInput);
+                retVal = convertUnits(userInput, 10);
                 break;
             case 11:
                 System.out.println("Selected option is Ounces to Gallons");
                 ;
                 System.out.print("Conversion result is: ");
-                retVal = convertOz2G(userInput);
+                retVal = convertUnits(userInput, 11);
                 break;
             case 12:
                 System.out.println("Selected option is Gallons to Ounces");
                 System.out.print("Conversion result is: ");
-                retVal = convertG2Oz(userInput);
+                retVal = convertUnits(userInput, 12);
                 break;
             case 13:
                 System.out.println("Selected option is Pounds to Kilograms");
                 System.out.print("Conversion result is: ");
-                retVal = convertLb2K(userInput);
+                retVal = convertUnits(userInput, 13);
                 break;
             case 14:
                 System.out.println("Selected option is Kilograms to Pounds");
                 System.out.print("Conversion result is: ");
-                retVal = convertK2Lb(userInput);
+                retVal = convertUnits(userInput, 14);
+                break;
+            case 15:
+                System.out.println("Selected option is Miles per hour to Kilometer per hour");
+                System.out.print("Conversion result is: ");
+                retVal = convertUnits(userInput, 15);
+                break;
+            case 16:
+                System.out.println("Selected option is Kilometer per hour to Miles per hour");
+                System.out.print("Conversion result is: ");
+                retVal = convertUnits(userInput, 16);
                 break;
             default:
                 System.out.println("Please enter a valid menu item.");
@@ -184,79 +194,65 @@ public class Conversion {
         System.out.println('\n');
     }
 
-    /**
-     * ***************************************************** Conversion methods
-     * below 14 methods, 2 for each pair of units
-     */
-    private static double convertF2C(double input) { // Convert farenheit to celsius
-        return (((input - 32.0) * 5.0) / 9.0);
-    }
+    private static double convertUnits(double original, int conversionOption) {
+        double newNum;
 
-    private static double convertC2F(double input) { // Convert celsius to farenheit
-        return ((input * 9.0 / 5.0) + 32.0);
-    }
+        switch (conversionOption) {
+            case 1:
+                newNum = (original - 32.0) * 5.0 / 9.0; // Fahrenheit to Celsius
+                break;
+            case 2:
+                newNum = (original * 9.0 / 5.0) + 32.0; // Celsius to Fahrenheit
+                break;
+            case 3:
+                newNum = original * 2.54; // Inch to Centimeter
+                break;
+            case 4:
+                newNum = original / 2.54; // Centimeter to Inch
+                break;
+            case 5:
+                newNum = original / 3.281; // Foot to Meter
+                break;
+            case 6:
+                newNum = original * 3.281; // Meter to Foot
+                break;
+            case 7:
+                newNum = original * 1.609; // Mile to Kilometer
+                break;
+            case 8:
+                newNum = original / 1.609; // Kilometer to Mile
+                break;
+            case 9:
+                newNum = original * 3.785; // Gallon to Liter
+                break;
+            case 10:
+                newNum = original / 3.785; // Liter to Gallon
+                break;
+            case 11:
+                newNum = original * 28.35; // Ounce to Gram
+                break;
+            case 12:
+                newNum = original / 28.35; // Gram to Ounce
+                break;
+            case 13:
+                newNum = original / 2.205; // Pound to Kilogram
+                break;
+            case 14:
+                newNum = original * 2.205; // Kilogram to Pound
+                break;
+            case 15:
+                newNum = original * 1.609; // Miles per hour to Kilometer per hour
+                break;
+            case 16:
+                newNum = original / 1.609; // Kilometer per hour to Miles per hour
+                break;
+            default:
+                System.out.println("Invalid conversion option. Giving back original without converting");
+                newNum = original; // No conversion
+                break;
+        }
 
-    // small distance
-    private static double convertIn2Cm(double input) { // Convert inches to centimeters
-        return (input * 2.54);
-    }
-
-    private static double convertCm2In(double input) { // Convert centimeters to inches
-        return (input * 0.3937);
-    }
-
-    // medium distance
-    private static double convertF2M(double input) { // Convert feet to meters
-        return (input * 0.3048);
-    }
-
-    private static double convertM2F(double input) { // Convert meters to feet
-        return (input / 0.6048);
-    }
-
-    // large distance
-    private static double convertM2K(double input) { // Convert miles to kilometers
-        return (input * 1.609);
-    }
-
-    private static double convertK2M(double input) { // Convert kilometers to miles
-        return (input * 0.6214);
-    }
-
-    // volume
-    private static double convertG2L(double input) { // Convert gallons to liters
-        return (input * 3.785);
-    }
-
-    private static double convertL2G(double input) { // Convert liters to gallons
-        return (input / 3.785);
-    }
-
-    // small weight
-    private static double convertOz2G(double input) { // Convert ounces to grams
-        return (input * 28.35);
-    }
-
-    private static double convertG2Oz(double input) { // Convert grams to ounces
-        return (input / 28.35);
-    }
-
-    // medium weight
-    private static double convertLb2K(double input) { // Convert pounds to kilograms
-        return (input * 0.4536);
-    }
-
-    private static double convertK2Lb(double input) { // Convert kilograms to pounds
-        return (input * 2.205);
-    }
-
-    private static double convertMphKmph(double input) {
-        // String Mph = "Mph";
-        // String Kmph = "Kmph";
-        // placeholder
-        double num2 = input; // temporary variables
-
-        return (num2);
+        return newNum;
     }
 
     // private static float directionHandler (String unitA, String unitB) //method
