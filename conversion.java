@@ -20,10 +20,10 @@
  *  - Scanner use only allows ints, another input type will crash
  */
 
-// Import Java Libraries
-import java.util.*;
+// Only thing we need to import is Scanner
+import java.util.Scanner;
 
-public class conversion {
+public class Conversion {
 
     public static void main(String[] args) {
         // on first run, print menu
