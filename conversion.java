@@ -49,12 +49,12 @@ public class Conversion {
         System.out.println("Please enter a number between 0 and 4 to set the number of digits after the decimal mark:");
         precision = Integer.parseInt(menuInput.nextLine());
 
-        printMenu(); // print menu will ask for number between 1 and 14
+        printMenu(); // print menu will ask for number between 1 and 17
         i = Integer.parseInt(menuInput.nextLine());
 
-        // user should put in a number between 1 and 14, else the while loop is not
+        // user should put in a number between 1 and 17, else the while loop is not
         // entered.
-        while ((i > 0) && (i < 15)) {
+        while ((i > 0) && (i < 17)) {
             // once an option chosen, ask the user what number they want to convert
             System.out.println("What number would you like to convert?\n");
             userInput = (Float.parseFloat(menuInput.nextLine()));
@@ -158,23 +158,25 @@ public class Conversion {
     }
 
     public static void printMenu() {
-        System.out.println("Please choose between options 1 to 14 to convert a value:");
+        System.out.println("Please choose between options 1 to 17 to convert a value:");
         System.out.println(
-                  "1. Fahrenheit (Fº)     ----->     Celsius (Cº)\n"
-                + "2. Celsius (Cº)        ----->     Fahrenheit (Fº)\n"
-                + "3. Inch (in)           ----->     Centimeter (cm)\n"
-                + "4. Centimeter (cm)     ----->     Inch (in)\n"
-                + "5. Feet (ft)           ----->     Meter (m)\n"
-                + "6. Meter (m)           ----->     Feet (ft)\n"
-                + "7. Mile (mi)           ----->     Kilometer (km)\n"
-                + "8. Kilometer (km)      ----->     Mile (mi)\n"
-                + "9. Gallon (gal)        ----->     Liter (L)\n"
-                + "10. Liter (L)          ----->     Gallon (gal)\n"
-                + "11. Ounce (oz)         ----->     Gram (g)\n"
-                + "12. Gram (g)           ----->     Ounce (oz)\n"
-                + "13. Pound (lb)         ----->     Kilogram (kg)\n"
-                + "14. Kilogram (kg)      ----->     Pound (lb)\n"
-                + "15. Quit\n");
+                  "1.  Fahrenheit (Fº)           --->     Celsius (Cº)\n"
+                + "2.  Celsius (Cº)              --->     Fahrenheit (Fº)\n"
+                + "3.  Inch (in)                 --->     Centimeter (cm)\n"
+                + "4.  Centimeter (cm)           --->     Inch (in)\n"
+                + "5.  Feet (ft)                 --->     Meter (m)\n"
+                + "6.  Meter (m)                 --->     Feet (ft)\n"
+                + "7.  Mile (mi)                 --->     Kilometer (km)\n"
+                + "8.  Kilometer (km)            --->     Mile (mi)\n"
+                + "9.  Gallon (gal)              --->     Liter (L)\n"
+                + "10. Liter (L)                 --->     Gallon (gal)\n"
+                + "11. Ounce (oz)                --->     Gram (g)\n"
+                + "12. Gram (g)                  --->     Ounce (oz)\n"
+                + "13. Pound (lb)                --->     Kilogram (kg)\n"
+                + "14. Kilogram (kg)             --->     Pound (lb)\n"
+                + "15. Miles per hour (mph)      --->     Kilometer per hour (km/h)\n"
+                + "16. Kilometer per hour (km/h) --->     Miles per hour (mph)\n"
+                + "17. Quit\n");
     }
 
     // Prints the result of conversion with a level of precision specified by the
