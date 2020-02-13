@@ -1,10 +1,10 @@
-/** *****************************************************************
-    conversion.java
+/**
+*********************************************************************
+    Conversion.java
     Converts various measures from one unit to another
-    
+
     Original webapp:
     @author Jeff Offutt & Ren Li
-
         @version 1.0    October 2000
         @version 2.0    June 2015
         @version 2.1    January 2020
@@ -13,7 +13,8 @@
     @author Nelson Raley, Gabriel Bartholomäus-Cabezas, Michael Pham
         @version 1.0 February 6 2020
         @version 1.1 --
-********************************************************************* */
+*********************************************************************
+*/
 
 /**
  * Known Errors:
@@ -26,6 +27,12 @@ import java.util.Scanner;
 public class Conversion {
 
     public static void main(String[] args) {
+        Scanner menuInput;
+        int precision;
+        int i;
+        double userInput;
+        double retVal;
+
         // on first run, print menu
         System.out.println(
                             "\n"
@@ -33,25 +40,25 @@ public class Conversion {
                             + "*(Not So) On-line Measurement Conversion*\n"
                             + "*****************************************\n");
 
-        Scanner menuInput = new Scanner(System.in); // get user input
+        menuInput = new Scanner(System.in); // get user input
 
         // The instructions say the accuracy levels are from 0 to 4
         // 0 would just be an int like 212
         // 1 would be like 212.6
         // 2 would produce 212.65 and so on for 3 and 4
         System.out.println("Please enter a number between 0 and 4 to set the number of digits after the decimal mark:");
-        int precision = Integer.parseInt(menuInput.nextLine());
+        precision = Integer.parseInt(menuInput.nextLine());
 
         printMenu(); // print menu will ask for number between 1 and 14
-        int i = Integer.parseInt(menuInput.nextLine());
+        i = Integer.parseInt(menuInput.nextLine());
 
         // user should put in a number between 1 and 14, else the while loop is not
         // entered.
         while ((i > 0) && (i < 15)) {
             // once an option chosen, ask the user what number they want to convert
             System.out.println("What number would you like to convert?\n");
-            float userInput = (Float.parseFloat(menuInput.nextLine()));
-            float retVal = (float) 0.0;
+            userInput = (Float.parseFloat(menuInput.nextLine()));
+            retVal = 0.0;
             switch (i) {
             case 1:
                 System.out.println("Selected option is Fahrenheit to Celsius");
@@ -158,12 +165,11 @@ public class Conversion {
                 + "13. Pound (lb)         ----->     Kilogram (kg)\n"
                 + "14. Kilogram (kg)      ----->     Pound (lb)\n"
                 + "15. Quit\n");
-
     }
 
     // Prints the result of conversion with a level of precision specified by the
     // user
-    public static void printResult(float input, float precision) {
+    public static void printResult(double input, double precision) {
         if (precision == 4) {
             System.out.println(String.format("%.4f", input));
         } else if (precision == 3) {
@@ -182,74 +188,73 @@ public class Conversion {
      * ***************************************************** Conversion methods
      * below 14 methods, 2 for each pair of units
      */
-    private static float convertF2C(float input) { // Convert farenheit to celsius
-        return (float) (((input - 32.0) * 5.0) / 9.0);
+    private static double convertF2C(double input) { // Convert farenheit to celsius
+        return (((input - 32.0) * 5.0) / 9.0);
     }
 
-    private static float convertC2F(float input) { // Convert celsius to farenheit
-        return (float) ((input * 9.0 / 5.0) + 32.0);
+    private static double convertC2F(double input) { // Convert celsius to farenheit
+        return ((input * 9.0 / 5.0) + 32.0);
     }
 
     // small distance
-    private static float convertIn2Cm(float input) { // Convert inches to centimeters
-        return (float) (input * 2.54);
+    private static double convertIn2Cm(double input) { // Convert inches to centimeters
+        return (input * 2.54);
     }
 
-    private static float convertCm2In(float input) { // Convert centimeters to inches
-        return (float) (input * 0.3937);
+    private static double convertCm2In(double input) { // Convert centimeters to inches
+        return (input * 0.3937);
     }
 
     // medium distance
-    private static float convertF2M(float input) { // Convert feet to meters
-        return (float) (input * 0.3048);
+    private static double convertF2M(double input) { // Convert feet to meters
+        return (input * 0.3048);
     }
 
-    private static float convertM2F(float input) { // Convert meters to feet
-        return (float) (input / 0.6048);
+    private static double convertM2F(double input) { // Convert meters to feet
+        return (input / 0.6048);
     }
 
     // large distance
-    private static float convertM2K(float input) { // Convert miles to kilometers
-        return (float) (input * 1.609);
+    private static double convertM2K(double input) { // Convert miles to kilometers
+        return (input * 1.609);
     }
 
-    private static float convertK2M(float input) { // Convert kilometers to miles
-        return (float) (input * 0.6214);
+    private static double convertK2M(double input) { // Convert kilometers to miles
+        return (input * 0.6214);
     }
 
     // volume
-    private static float convertG2L(float input) { // Convert gallons to liters
-        return (float) (input * 3.785);
+    private static double convertG2L(double input) { // Convert gallons to liters
+        return (input * 3.785);
     }
 
-    private static float convertL2G(float input) { // Convert liters to gallons
-        return (float) (input / 3.785);
+    private static double convertL2G(double input) { // Convert liters to gallons
+        return (input / 3.785);
     }
 
     // small weight
-    private static float convertOz2G(float input) { // Convert ounces to grams
-        return (float) (input * 28.35);
+    private static double convertOz2G(double input) { // Convert ounces to grams
+        return (input * 28.35);
     }
 
-    private static float convertG2Oz(float input) { // Convert grams to ounces
-        return (float) (input / 28.35);
+    private static double convertG2Oz(double input) { // Convert grams to ounces
+        return (input / 28.35);
     }
 
     // medium weight
-    private static float convertLb2K(float input) { // Convert pounds to kilograms
-        return (float) (input * 0.4536);
+    private static double convertLb2K(double input) { // Convert pounds to kilograms
+        return (input * 0.4536);
     }
 
-    private static float convertK2Lb(float input) { // Convert kilograms to pounds
-        return (float) (input * 2.205);
+    private static double convertK2Lb(double input) { // Convert kilograms to pounds
+        return (input * 2.205);
     }
 
-    private static float convertMphKmph(String inputAsStr) {
+    private static double convertMphKmph(double input) {
         // String Mph = "Mph";
         // String Kmph = "Kmph";
-        float num1, num2; // temporary variables
-        num2 = 1;
-        int n;
+        // placeholder
+        double num2 = input; // temporary variables
 
         return (num2);
     }
