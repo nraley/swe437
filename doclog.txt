@@ -13,7 +13,7 @@ These ask the user for how much precision they want on their next conversion.
 
 
 Maintainability Assessment:
-Due to all the redundancy created and left behind by the original programmers, there was a lot that had to be cleaned up.
+The original programmers left behind some redundancy in the code, which gave us an opportunity to refactor and cleanup.
 Likewise, we had created spaces and functions in our previous version that needed to be altered.
 While we knew we would have to change it, it did lead to some problems due to us not having settled on a clear coding convention.
 
