@@ -50,8 +50,7 @@ public class Conversion {
         while ((i > 0) && (i < 15)) {
             // once an option chosen, ask the user what number they want to convert
             System.out.println("What number would you like to convert?\n");
-            String c = menuInput.nextLine();
-            float userInput = (Float.valueOf(c).floatValue());
+            float userInput = (Float.parseFloat(menuInput.nextLine()));
             float retVal = (float) 0.0;
             switch (i) {
             case 1:
