@@ -198,7 +198,7 @@ public class Conversion {
         System.out.println('\n');
     }
 
-    private static double convertUnits(double original, int conversionOption) {
+    public static double convertUnits(double original, int conversionOption) {
         double newNum;
 
         switch (conversionOption) {
