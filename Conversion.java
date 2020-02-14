@@ -12,7 +12,7 @@
     Command line UI modification:
     @author Nelson Raley, Gabriel Bartholomäus-Cabezas, Michael Pham
         @version 1.0 February 6 2020
-        @version 1.1 --
+        @version 1.1 February 13 2020
 *********************************************************************
 */
 
