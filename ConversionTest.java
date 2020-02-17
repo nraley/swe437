@@ -27,11 +27,22 @@ public class ConversionTest {
     // printResult takes a double and int
     // input 1 (double) is the result
     // input 2 (int) is the precision level
-    // output is a string 
+    // output is a string
     @Test public void testFormatResultHappyPath(){
-        oriVal = 32;
+        oriVal = 1.2345;
+        option = 0;
+        assertTrue("FormatResult Happy Path Failure", tester.formatResult(oriVal, option).equals("1"));
+        option = 1;
+        assertTrue("FormatResult Happy Path Failure", tester.formatResult(oriVal, option).equals("1.2"));
         option = 2;
-        assertTrue("FormatResult Happy Path Failure", tester.formatResult(oriVal, option).equals("32.00"));
+        assertTrue("FormatResult Happy Path Failure", tester.formatResult(oriVal, option).equals("1.23"));
+        option = 3;
+        // Not 1.234 because String.Format() rounds
+        assertTrue("FormatResult Happy Path Failure", tester.formatResult(oriVal, option).equals("1.235"));
+        option = 4;
+        assertTrue("FormatResult Happy Path Failure", tester.formatResult(oriVal, option).equals("1.2345"));
+        option = 5;
+        assertTrue("FormatResult Happy Path Failure", tester.formatResult(oriVal, option).equals("ERR"));
     }
 
     // convertUnits takes a double and int
