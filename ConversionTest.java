@@ -27,16 +27,18 @@ public class ConversionTest {
     // printResult takes a double and int
     // input 1 (double) is the result
     // input 2 (int) is the precision level
-    // output is a string printed to screen
-    @Test public void testPrintResult(){
-        
+    // output is a string 
+    @Test public void testFormatResultHappyPath(){
+        oriVal = 32;
+        option = 2;
+        assertTrue("FormatResult Happy Path Failure", tester.formatResult(oriVal, option).equals("32.00"));
     }
 
     // convertUnits takes a double and int
     // input 1 (double) is the original value
     // input 2 (int) is the conversion option
-    @Test public void testConvertUnits() {
+    @Test public void testConvertUnitsHappyPath() {
         oriVal = 32;
-        assertTrue("F2C Conversion Failed",tester.convertUnits(oriVal, 1) == 0.0);
+        assertTrue("ConvertUnit Happy Path Failure", tester.convertUnits(oriVal, 1) == 0.0);
     }
 }

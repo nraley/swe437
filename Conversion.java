@@ -32,6 +32,7 @@ public class Conversion {
         int i;
         double userInput;
         double retVal;
+        String print;
 
         // on first run, print menu
         System.out.println(
@@ -145,7 +146,15 @@ public class Conversion {
                 System.out.println("Please enter a valid menu item.");
                 break;
             }
-            printResult(retVal, precision);
+
+            // Formats result and prints it
+            print = formatResult(retVal, precision);
+            if (!print.equals("ERR")) {
+                System.out.println(print);
+            } else {
+                System.out.println("Precision not properly set. Result not returned.");
+            }
+            
             // after printing result, ask to choose accuracy level again
             System.out.println(
                     "Please enter a number between 0 and 4 to set the number of digits after the decimal mark:");
@@ -179,23 +188,26 @@ public class Conversion {
                 + "17. Quit\n");
     }
 
-    // Prints the result of conversion with a level of precision specified by the
+    // Formats the result of conversion with a level of precision specified by the
     // user
-    public static void printResult(double input, int precision) {
+    public static String formatResult(double input, int precision) {
+        String result;
+
         if (precision == 4) {
-            System.out.println(String.format("%.4f", input));
+            result = String.format("%.4f", input);
         } else if (precision == 3) {
-            System.out.println(String.format("%.3f", input));
+            result = String.format("%.3f", input);
         } else if (precision == 2) {
-            System.out.println(String.format("%.2f", input));
+            result = String.format("%.2f", input);
         } else if (precision == 1) {
-            System.out.println(String.format("%.1f", input));
+            result = String.format("%.1f", input);
         } else if (precision == 0) {
-            System.out.println(String.format("%.0f", input));
+            result = String.format("%.0f", input);
         } else {
-            System.out.println("Precision not properly set. Please exit and reset.");
+            result = "ERR";
         }
-        System.out.println('\n');
+
+        return result;
     }
 
     public static double convertUnits(double original, int conversionOption) {
