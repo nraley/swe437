@@ -13,6 +13,7 @@
     @author Nelson Raley, Gabriel Bartholomäus-Cabezas, Michael Pham
         @version 1.0 February 6 2020
         @version 1.1 February 13 2020
+        @version 1.2 February 19 2020
 *********************************************************************
 */
 
@@ -33,7 +34,6 @@ public class Conversion {
         double userInput;
         double retVal;
         String print;
-
         // on first run, print menu
         System.out.println(
                             "\n"
@@ -47,18 +47,19 @@ public class Conversion {
         // 0 would just be an int like 212
         // 1 would be like 212.6
         // 2 would produce 212.65 and so on for 3 and 4
-        System.out.println("Please enter a number between 0 and 4 to set the number of digits after the decimal mark:");
-        precision = Integer.parseInt(menuInput.nextLine());
+        System.out.println(
+                    "Please enter a number between 0 and 4 to set the number of digits after the decimal mark:");
+        precision = (int) Math.round(getUserInput(menuInput));
 
         printMenu(); // print menu will ask for number between 1 and 17
-        i = Integer.parseInt(menuInput.nextLine());
+        i = (int) Math.round(getUserInput(menuInput));
 
         // user should put in a number between 1 and 17, else the while loop is not
         // entered.
         while ((i > 0) && (i < 17)) {
             // once an option chosen, ask the user what number they want to convert
             System.out.println("What number would you like to convert?\n");
-            userInput = (Float.parseFloat(menuInput.nextLine()));
+            userInput = getUserInput(menuInput);
             retVal = 0.0;
             switch (i) {
             case 1:
@@ -158,12 +159,28 @@ public class Conversion {
             // after printing result, ask to choose accuracy level again
             System.out.println(
                     "Please enter a number between 0 and 4 to set the number of digits after the decimal mark:");
-            precision = Integer.parseInt(menuInput.nextLine());
+            precision = (int) Math.round(getUserInput(menuInput));
             // print menu again and restart conversion process
             printMenu();
-            i = Integer.parseInt(menuInput.nextLine());
+            i = (int) Math.round(getUserInput(menuInput));
         }
         menuInput.close();
+    }
+
+    public static double getUserInput(Scanner inputMethod) {
+        double result = (double) 0.0;
+        String userInput = "";
+        boolean properInput = false;
+        while (!properInput) {
+            userInput = inputMethod.nextLine();
+            try {
+                result = Float.parseFloat(userInput);
+                properInput = true;
+            } catch (Exception e) {
+                System.out.println("Please input a number");
+            }
+        }
+        return result;
     }
 
     public static void printMenu() {
