@@ -1,0 +1,13 @@
+Cover Page:
+
+Nelson Raley
+Gabriel Bartholomäus
+Michael Pham
+
+Version 1.2 Collaboration Summary:
+
+Gabriel Bartholomäus added Junit functionality to the project, created a makefile to make compiling and running Junit test easier.
+Following that, he update the main Conversion class to handle non-int inputs and helped with developing the Junit tests.
+
+Michael Pham answered part 2 of assignment 4 about the JUnit test flaw.
+Following that, he also helped with the JUnit tests for Conversion.class by adding test inputs.

@@ -1,0 +1,56 @@
+Assignment 4, Part 1 - JUnit testing for conversion
+
+A. Our input domain consists of
+
+Conversion.formatResult(1.2345, 0)
+Conversion.formatResult(1.2345, 1)
+Conversion.formatResult(1.2345, 2)
+Conversion.formatResult(1.2345, 3)
+Conversion.formatResult(1.2345, 4)
+Conversion.formatResult(1.2345, 5)
+
+Conversion.formatResult(0.0, -1)
+Conversion.formatResult(Float.MAX_VALUE, 0)
+
+Conversion.convertUnits(32, 1)
+Conversion.convertUnits(100, 2)
+Conversion.convertUnits(1, 3)
+Conversion.convertUnits(1, 4)
+Conversion.convertUnits(1, 5)
+Conversion.convertUnits(1, 6)
+Conversion.convertUnits(1, 7)
+Conversion.convertUnits(1, 8)
+Conversion.convertUnits(1, 9)
+Conversion.convertUnits(1, 10)
+Conversion.convertUnits(1, 11)
+Conversion.convertUnits(1, 12)
+Conversion.convertUnits(1, 13)
+Conversion.convertUnits(1, 14)
+Conversion.convertUnits(1, 15)
+Conversion.convertUnits(1, 16)
+Conversion.convertUnits(1, 17)
+
+C. All tests associated with formatResult such as testFormatResultHappyPath and testFormatResultUnexpectedInputs test observability due to the nature of where the function is in the program, right before a printout.
+
+D. All tests associated with convertUnits such as testConvertUnitsHappyPath test controlability since they check the control flow of the program and what their results are.
+
+There is an issue with null test cases like testConvertUnitsNullInputs where the compiler did not allow us to insert nulls and thus could not be properly tested.
+
+Assignment 4, Part 2 - JUnit Test Flaw
+
+Note: Since the nature of the variable p is not known and the exact behavior of p.computePrimes(5) is not clear to us, we have assumed that p is some kind of empty list object and that p.computePrimes(5) puts into the list the first five prime numbers (2, 3, 5, 7, 11). We also assume that p.getFirstPrime() checks the first number in the list.
+
+A. In terms of the RIPR model, the fault is that the assertion is not comprehensive of the entire correct list which means the test does not REVEAL the flaw. The fault is in this line
+
+assertTrue("computePrimes failed", p.getFirstPrime() == 2);
+
+If the computePrimes method is possibly flawed, we wouldn't be able to tell from this test even if the test REACHES the fault, INFECTS the state, and PROPAGATES to the end of the method. Therefore, this test is flawed because it would not be able to REVEAL the flaw to us.
+
+B. A possible rewrite of this test is
+
+@Test
+public void testComputePrimes()
+{
+   p.computePrimes(5); // Compute the first 5 prime numbers
+   assertTrue("computePrimes failed", p.toString().equals("2, 3, 5, 7, 11"));
+}

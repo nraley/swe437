@@ -15,7 +15,8 @@ public class ConversionTest {
     int option = 0;
     // Runs before every test
     @Before public void startUp() {
-
+        oriVal = (double) 0.0;
+        option = 0;
     }
 
     // Runs after every test
@@ -27,6 +28,7 @@ public class ConversionTest {
     // input 1 (double) is the result
     // input 2 (int) is the precision level
     // output is a string
+    // All of these tests directly test observability as they will be sent to the user after this
     @Test public void testFormatResultHappyPath(){
         oriVal = 1.2345;
         option = 0;
@@ -52,6 +54,7 @@ public class ConversionTest {
 
     // tests against nonproper inputs like strings
     // out of bound results, backwards inputs
+    // As with the previous FormatResult tests, these test observability
     @Test public void testFormatResultUnexpectedInputs() {
         option = -1;
         assertTrue("FormatResult", Conversion.formatResult(oriVal, option).equals("ERR"));
@@ -63,6 +66,7 @@ public class ConversionTest {
     // convertUnits takes a double and int
     // input 1 (double) is the original value
     // input 2 (int) is the conversion option
+    // These test check for control flow of the program and what is expected at each branch
     @Test public void testConvertUnitsHappyPath() {
         oriVal = 32;
         assertTrue("ConvertUnit F2C Happy Path Failure", Conversion.convertUnits(oriVal, 1) == 0.0);
@@ -92,6 +96,6 @@ public class ConversionTest {
     }
 
     @Test public void testConvertUnitsUnexpectedInputs() {
-        //String stringTest = "";
+        //assertTrue("ConvertUnit ")
     }
 }
