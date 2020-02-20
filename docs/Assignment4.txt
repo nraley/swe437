@@ -1,5 +1,7 @@
 Assignment 4, Part 1 - JUnit testing for conversion
 
+**We used Junit 4.13 for our assignment**
+
 A. Our input domain consists of
 
 Conversion.formatResult(1.2345, 0)

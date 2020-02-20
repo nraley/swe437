@@ -11,3 +11,6 @@ Following that, he update the main Conversion class to handle non-int inputs and
 
 Michael Pham answered part 2 of assignment 4 about the JUnit test flaw.
 Following that, he also helped with the JUnit tests for Conversion.class by adding test inputs.
+
+Nelson Raley participated in discussion with Michael and Gabriel in solving the Part 2 problem.
+He also worked on generating tests for null and unexpected input tests for unit conversion before we realized this was a moot point due to compiler intervention.
