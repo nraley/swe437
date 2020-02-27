@@ -25,10 +25,10 @@ public class Conversion {
     public static void main(String[] args) {
         Scanner menuInput;
         int precision;
-        int i;
+        int userSelection;
         double userInput;
         double retVal;
-        String print;
+        String printOut;
         // on first run, print menu
         System.out.println(
                             "\n"
@@ -47,16 +47,39 @@ public class Conversion {
         precision = (int) Math.round(getUserInput(menuInput));
 
         printMenu(); // print menu will ask for number between 1 and 17
-        i = (int) Math.round(getUserInput(menuInput));
+        userSelection = (int) Math.round(getUserInput(menuInput));
 
         // user should put in a number between 1 and 17, else the while loop is not
         // entered.
-        while ((i > 0) && (i < 17)) {
+        while ((userSelection > 0) && (userSelection < 17)) {
             // once an option chosen, ask the user what number they want to convert
             System.out.println("What number would you like to convert?\n");
             userInput = getUserInput(menuInput);
             retVal = 0.0;
-            switch (i) {
+
+            userSelection(userSelection, userInput, retVal);
+
+            // Formats result and prints it
+            printOut = formatResult(retVal, precision);
+            if (!printOut.equals("ERR")) {
+                System.out.println(printOut);
+            } else {
+                System.out.println("Precision not properly set. Result not returned.");
+            }
+            
+            // after printing result, ask to choose accuracy level again
+            System.out.println(
+                    "Please enter a number between 0 and 4 to set the number of digits after the decimal mark:");
+            precision = (int) Math.round(getUserInput(menuInput));
+            // print menu again and restart conversion process
+            printMenu();
+            userSelection = (int) Math.round(getUserInput(menuInput));
+        }
+        menuInput.close();
+    }
+
+    private static double userSelection(int selection, double userInput, double retVal) {
+        switch (selection) {
             case 1:
                 System.out.println("Selected option is Fahrenheit to Celsius");
                 System.out.print("Conversion result is: ");
@@ -142,27 +165,10 @@ public class Conversion {
                 System.out.println("Please enter a valid menu item.");
                 break;
             }
-
-            // Formats result and prints it
-            print = formatResult(retVal, precision);
-            if (!print.equals("ERR")) {
-                System.out.println(print);
-            } else {
-                System.out.println("Precision not properly set. Result not returned.");
-            }
-            
-            // after printing result, ask to choose accuracy level again
-            System.out.println(
-                    "Please enter a number between 0 and 4 to set the number of digits after the decimal mark:");
-            precision = (int) Math.round(getUserInput(menuInput));
-            // print menu again and restart conversion process
-            printMenu();
-            i = (int) Math.round(getUserInput(menuInput));
-        }
-        menuInput.close();
+        return retVal;
     }
 
-    public static double getUserInput(Scanner inputMethod) {
+    private static double getUserInput(Scanner inputMethod) {
         double result = (double) 0.0;
         String userInput = "";
         boolean properInput = false;
