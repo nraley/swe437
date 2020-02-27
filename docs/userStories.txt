@@ -1,0 +1,6 @@
+mph<->kpl:
+I want to buy a car from a European site, Its gas mileage is in KPL but I'm American.
+
+k<->C:
+I'm on a scietific webpage and I don't understand kelvin but I understand Celsius.
+I need to convert to get what they are talking about.
