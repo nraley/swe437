@@ -8,4 +8,4 @@ Version 1.3 Collaboration Summary:
 
 Gabriel formulated the user stories.
 
-Nelson created the initial tests from the user stories.
+Nelson created the basic initial tests from the user stories, and made sure they worked properly.

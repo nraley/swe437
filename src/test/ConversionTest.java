@@ -90,7 +90,7 @@ public class ConversionTest {
         assertTrue("ConvertUnit Kg2Lb Happy Path Failure", Conversion.convertUnits(oriVal, 14) == 2.205);
         assertTrue("ConvertUnit Mph2Kph Happy Path Failure", Conversion.convertUnits(oriVal, 15) == 1.609);
         assertTrue("ConvertUnit Kph2Mph Happy Path Failure", Conversion.convertUnits(oriVal, 16) == 0.6215040397762586);
-        assertTrue("ConvertUnit Default Happy Path Failure", Conversion.convertUnits(oriVal, 17) == 1);
+        assertTrue("ConvertUnit Default Happy Path Failure", Conversion.convertUnits(oriVal, 21) == 1);
     }
 
     @Test public void testConvertUnitsNullInputs() {
@@ -105,12 +105,12 @@ public class ConversionTest {
     @Test public void testMPGtoKPL() {
         oriVal = 1;
         assertTrue("ConvertUnit MPGtoKPL Happy Path Failure", Conversion.convertUnits(oriVal, 17) == 0.42514);  //we begin with a basic conversion, 1mpg to kpl
-        //assertTrue("ConvertUnit KPLtoMPG Happy Path Failure", Conversion.convertUnits(oriVal, 18) == 0.6215040397762586);
+        assertTrue("ConvertUnit KPLtoMPG Happy Path Failure", Conversion.convertUnits(oriVal, 18) == 2.3521663452);
     }
 
-//    @Test public void testKELtoCEL() {
-//        oriVal = 273.15;
-//        assertTrue("ConvertUnit Kel2Cel Happy Path Failure", Conversion.convertUnits(oriVal, 19) == 0.6215040397762586);
-//        assertTrue("ConvertUnit Cel2Kel Happy Path Failure", Conversion.convertUnits(oriVal, 20) == 0.6215040397762586);
-//    }
+    @Test public void testKELtoCEL() {
+        oriVal = 0;
+        assertTrue("ConvertUnit Kel2Cel Happy Path Failure", Conversion.convertUnits(oriVal, 19) == 273.15);
+        assertTrue("ConvertUnit Cel2Kel Happy Path Failure", Conversion.convertUnits(oriVal, 20) == -273.15);
+    }
 }

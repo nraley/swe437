@@ -51,7 +51,7 @@ public class Conversion {
 
         // user should put in a number between 1 and 17, else the while loop is not
         // entered.
-        while ((userSelection > 0) && (userSelection < 17)) {
+        while ((userSelection > 0) && (userSelection < 21)) {
             // once an option chosen, ask the user what number they want to convert
             System.out.println("What number would you like to convert?\n");
             userInput = getUserInput(menuInput);
@@ -161,6 +161,22 @@ public class Conversion {
                 System.out.print("Conversion result is: ");
                 retVal = convertUnits(userInput, 16);
                 break;
+            case 17:
+                System.out.println("Selected option is Miles per gallon to Kilometers per liter");
+                System.out.println("Conversion result is: ");
+                retVal = convertUnits(userInput, 17);
+            case 18:
+                System.out.println("Selected option is Kilometers per liter to Miles per gallon");
+                System.out.println("Conversion result is: ");
+                retVal = convertUnits(userInput, 18);
+            case 19:
+                System.out.println("Selected option is Kelvin to Celsius");
+                System.out.println("Conversion result is: ");
+                retVal = convertUnits(userInput, 19);
+            case 20:
+                System.out.println("Selected option is Celsius to Kelvin");
+                System.out.println("Conversion result is: ");
+                retVal = convertUnits(userInput, 20);
             default:
                 System.out.println("Please enter a valid menu item.");
                 break;
@@ -185,7 +201,7 @@ public class Conversion {
     }
 
     public static void printMenu() {
-        System.out.println("Please choose between options 1 to 17 to convert a value:");
+        System.out.println("Please choose between options 1 to 21 to convert a value:");
         System.out.println(
                   "1.  Fahrenheit (Fº)           --->     Celsius (Cº)\n"
                 + "2.  Celsius (Cº)              --->     Fahrenheit (Fº)\n"
@@ -203,7 +219,11 @@ public class Conversion {
                 + "14. Kilogram (kg)             --->     Pound (lb)\n"
                 + "15. Miles per hour (mph)      --->     Kilometer per hour (km/h)\n"
                 + "16. Kilometer per hour (km/h) --->     Miles per hour (mph)\n"
-                + "17. Quit\n");
+                + "17. Miles per Gallon (mpg)    --->     Kilometers per liter (kpl)\n"
+                + "18. Kilometers per Liter (kpl)--->     Miles per gallon (mpg)\n"
+                + "19. Kelvin (K)                --->     Celcius (C)\n"
+                + "20. Celcius (C)               --->     Kelvin (K)\n"
+                + "21. Quit\n");
     }
 
     // Formats the result of conversion with a level of precision specified by the
@@ -281,7 +301,17 @@ public class Conversion {
                 newNum = original / 1.609; // Kilometer per hour to Miles per hour
                 break;
             case 17:
-                newNum = original * 0.42514;    //Mph per Gallon to Kmph per Liter
+                newNum = original * 0.42514;    //Miles per Gallon to Kilometers per Liter
+                break;
+            case 18:
+                newNum = original * 2.3521663452; //Kilometers per Liter to Miles per Gallon
+                break;
+            case 19:
+                newNum = original + 273.15; //Kelvin to Celsius
+                break;
+            case 20:
+                newNum = original - 273.15; //Celsius to Kelvin
+                break;
             default:
                 System.out.println("Invalid conversion option. Giving back original without converting");
                 newNum = original; // No conversions

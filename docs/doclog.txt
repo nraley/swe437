@@ -14,3 +14,16 @@ Testing:
         Iteration 1:
             Test: For starters, we just want to test conversion in one direction, so we're starting with MPG to KPL. We assume that another conversion option has been created in the switch statement used to decide conversion, and expect the proper result.
             Refactor: We first add another conversion option in our convertUnits() switch statement: case 17. Then, fill in the proper conversion.
+            Observations: Once passing, the new test for this case broke our old test that tested all the other conversion, requiring modification, so I see why methodical TDD is such a good idea.
+        Iteration 2:
+            Test: Now we add the other conversion direction, Kpl, to Mpg.
+            Refactor: Add the new case.
+            Observations: I was tempted to test both directions simultaneously, but I'm glad we didn't, because it helped us focus on making a single test work
+
+    Kelvin to Celcius TDD log:
+        Iteration 1:
+            Test: Basic one-direction test, from Kel to Cel. Input of 0 should give us 273.15.
+            Refactor: Changed all the places that needed to be changed to allow for a 19th conversion option.
+        Iteration 2:
+            Test: Added other direction, Cel to Kel.
+            Refactor: Implemented the new conversion and added the 20th option.
