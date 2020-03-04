@@ -4,13 +4,8 @@ Nelson Raley
 Gabriel Bartholomäus
 Michael Pham
 
-Version 1.2 Collaboration Summary:
+Version 1.3 Collaboration Summary:
 
-Gabriel Bartholomäus added Junit functionality to the project, created a makefile to make compiling and running Junit test easier.
-Following that, he update the main Conversion class to handle non-int inputs and helped with developing the Junit tests.
+Gabriel formulated the user stories.
 
-Michael Pham answered part 2 of assignment 4 about the JUnit test flaw.
-Following that, he also helped with the JUnit tests for Conversion.class by adding test inputs.
-
-Nelson Raley participated in discussion with Michael and Gabriel in solving the Part 2 problem.
-He also worked on generating tests for null and unexpected input tests for unit conversion before we realized this was a moot point due to compiler intervention.
+Nelson created the initial tests from the user stories.

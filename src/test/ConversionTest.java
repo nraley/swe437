@@ -101,4 +101,16 @@ public class ConversionTest {
     @Test public void testConvertUnitsUnexpectedInputs() {
         //assertTrue("ConvertUnit ")
     }
+
+    @Test public void testMPGtoKPL() {
+        oriVal = 1;
+        assertTrue("ConvertUnit MPGtoKPL Happy Path Failure", Conversion.convertUnits(oriVal, 17) == 0.42514);  //we begin with a basic conversion, 1mpg to kpl
+        //assertTrue("ConvertUnit KPLtoMPG Happy Path Failure", Conversion.convertUnits(oriVal, 18) == 0.6215040397762586);
+    }
+
+//    @Test public void testKELtoCEL() {
+//        oriVal = 273.15;
+//        assertTrue("ConvertUnit Kel2Cel Happy Path Failure", Conversion.convertUnits(oriVal, 19) == 0.6215040397762586);
+//        assertTrue("ConvertUnit Cel2Kel Happy Path Failure", Conversion.convertUnits(oriVal, 20) == 0.6215040397762586);
+//    }
 }

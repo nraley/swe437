@@ -280,9 +280,11 @@ public class Conversion {
             case 16:
                 newNum = original / 1.609; // Kilometer per hour to Miles per hour
                 break;
+            case 17:
+                newNum = original * 0.42514;    //Mph per Gallon to Kmph per Liter
             default:
                 System.out.println("Invalid conversion option. Giving back original without converting");
-                newNum = original; // No conversion
+                newNum = original; // No conversions
                 break;
         }
 
