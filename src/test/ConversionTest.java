@@ -111,6 +111,7 @@ public class ConversionTest {
     @Test public void testKELtoCEL() {
         oriVal = 0;
         assertTrue("ConvertUnit Kel2Cel Happy Path Failure", Conversion.convertUnits(oriVal, 19) == 273.15);
-        assertTrue("ConvertUnit Cel2Kel Happy Path Failure", Conversion.convertUnits(oriVal, 20) == -273.15);
+        oriVal = 273.15;
+        assertTrue("ConvertUnit Cel2Kel Happy Path Failure", Conversion.convertUnits(oriVal, 20) == 0);
     }
 }

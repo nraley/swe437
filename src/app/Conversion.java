@@ -165,18 +165,31 @@ public class Conversion {
                 System.out.println("Selected option is Miles per gallon to Kilometers per liter");
                 System.out.println("Conversion result is: ");
                 retVal = convertUnits(userInput, 17);
+                break;
             case 18:
                 System.out.println("Selected option is Kilometers per liter to Miles per gallon");
                 System.out.println("Conversion result is: ");
                 retVal = convertUnits(userInput, 18);
+                break;
             case 19:
                 System.out.println("Selected option is Kelvin to Celsius");
-                System.out.println("Conversion result is: ");
-                retVal = convertUnits(userInput, 19);
+                if(userInput < 0) {
+                    System.out.println("Values below absolute zero are invalid.");
+                } else {
+                    System.out.println("Conversion result is: ");
+                    retVal = convertUnits(userInput, 19);
+                }
+                break;
             case 20:
                 System.out.println("Selected option is Celsius to Kelvin");
-                System.out.println("Conversion result is: ");
-                retVal = convertUnits(userInput, 20);
+                if(userInput < -273.15) {
+                    System.out.println("Values below absolute zero are invalid.");
+                }
+                else {
+                    System.out.println("Conversion result is: ");
+                    retVal = convertUnits(userInput, 20);
+                }
+                break;
             default:
                 System.out.println("Please enter a valid menu item.");
                 break;

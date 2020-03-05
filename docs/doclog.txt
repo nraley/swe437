@@ -32,3 +32,5 @@ Testing:
         Iteration 2:
             Test: Added other direction, Cel to Kel.
             Refactor: Implemented the new conversion and added the 20th option.
+        Iteration 3:
+            Test: Gabriel pointed out that there can be no values below 0 Kel, so test was changed to reflect this. Additionally, UI logic was added to prevent the user from entering celsius values below -273.15.

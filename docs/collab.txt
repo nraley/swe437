@@ -6,8 +6,8 @@ Michael Pham
 
 Version 1.3 Collaboration Summary:
 
-Gabriel formulated the user stories.
+Gabriel formulated the user stories and planned strategy for in what order things should be done, as well as providing good insight on the tests.
 
-Nelson created the basic initial tests from the user stories, and made sure they worked properly.
+Nelson implemented the tests from the user stories, and made sure they worked properly by updating the program.
 
-Michael added some more user stories.
+Michael added some more user stories and helped with implementation of the tests.
