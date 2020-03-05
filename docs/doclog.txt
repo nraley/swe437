@@ -2,9 +2,13 @@ Hand in for Assignment 5
 
 User stories:
 
-    mph<->kpl: I want to buy a car from a European site, Its gas mileage is in KPL but I'm American, so I use MPG.
+    mpg->kpl: I want to buy a car from a European site, Its gas mileage is in KPL but I'm American, so I use MPG.
+    
+    kpl->mpg: I'm a European tourist to the U.S. and I want to see understand how fast Americans drive on the highway.
 
-    k<->C: I'm on a scientific webpage and I don't understand kelvin, but I understand celsius.
+    k->C: I'm on a scientific webpage and I don't understand kelvin, but I understand celsius.
+    
+    C->k: I want to work with temperature science, and Kelvin is more natural to use in my research.
 
     For both cases, I want to be able to enter a value, and then choose precision between 1-4 decimal places.
 
