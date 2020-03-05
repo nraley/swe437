@@ -57,7 +57,7 @@ public class Conversion {
             userInput = getUserInput(menuInput);
             retVal = 0.0;
 
-            userSelection(userSelection, userInput, retVal);
+            retVal = userSelection(userSelection, userInput, retVal);
 
             // Formats result and prints it
             printOut = formatResult(retVal, precision);
