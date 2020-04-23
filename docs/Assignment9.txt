@@ -75,3 +75,138 @@
 2. [1,2,4,6,7,8,10,12,13,14,16,18,19,20,22,24,25,26,28,30]
 3. [1,2,4,5,6,8,10,11,12,14,16,17,18,20,22,23,24,26,28,29,30]
 4. [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30]
+
+(Question 1E)
+Test inputs
+
+1. 
+	FAsStr = 50
+	CAsStr = null 
+	inAsStr = null
+	cmAsStr = 2.54
+	ftAsStr = null
+	mAsStr = null
+	miAsStr = 1
+	kmAsStr = null
+	galAsStr = null 
+	LAsStr = 3
+	ozAsStr = null
+	gAsStr = null
+	lbAsStr = 4
+	kgAsStr = null
+	 
+2.
+	FAsStr = null
+	CAsStr = null 
+	inAsStr = 10
+	cmAsStr = null 
+	ftAsStr = null
+	mAsStr = null
+	miAsStr = 0.6214
+	kmAsStr = null
+	galAsStr = null
+	LAsStr = 12
+	ozAsStr = null
+	gAsStr = null
+	lbAsStr = 9
+	kgAsStr = null
+
+3. 
+	FAsStr = null
+	CAsStr = 3
+	inAsStr = null
+	cmAsStr = null
+	ftAsStr = 5
+	mAsStr = null
+	miAsStr = null
+	kmAsStr = 2
+	galAsStr = null
+	LAsStr = null
+	ozAsStr = 16
+	gAsStr = null
+	lbAsStr = null
+	kgAsStr = 3
+
+4.
+	FSsStr = 1
+	CSsStr = -17.22
+	inAsStr = 1
+	cmAsStr = 0.39
+	ftAsStr = 3.28
+	mAsStr = 1
+	miAsStr = 0.62
+	kmAsStr = 1
+	galAsStr = 0.26
+	LAsStr = 1
+	ozAsStr = 1
+	gAsStr = 28.35
+	lbAsStr = 1
+	kgAsStr = 0.45
+
+(Question 1F)
+Desired outputs (oracle)
+
+1.
+	FAsStr = null
+	CAsStr = 10.0 
+	inAsStr = 1
+	cmAsStr = null
+	ftAsStr = null
+	mAsStr = null
+	miAsStr = null
+	kmAsStr = 1.61
+	galAsStr = 0.79 
+	LAsStr = null
+	ozAsStr = null
+	gAsStr = null
+	lbAsStr = null
+	kgAsStr = 1.81
+
+2.
+	FAsStr = null
+	CAsStr = null 
+	inAsStr = null
+	cmAsStr = 25.4
+	ftAsStr = null
+	mAsStr = null
+	miAsStr = null
+	kmAsStr = 1
+	galAsStr = 3.17
+	LAsStr = null
+	ozAsStr = null
+	gAsStr = null
+	lbAsStr = null
+	kgAsStr = 4.08
+	
+3.
+	FAsStr = 37.4
+	CAsStr = null
+	inAsStr = null
+	cmAsStr = null
+	ftAsStr = null
+	mAsStr = 1.52
+	miAsStr = 1.24
+	kmAsStr = null
+	galAsStr = null
+	LAsStr = null
+	ozAsStr = null
+	gAsStr = 453.59
+	lbAsStr = 6.61
+	kgAsStr = null
+
+4.
+	FSsStr = 1
+	CSsStr = -17.22
+	inAsStr = 1
+	cmAsStr = 0.39
+	ftAsStr = 3.28
+	mAsStr = 1
+	miAsStr = 0.62
+	kmAsStr = 1
+	galAsStr = 0.26
+	LAsStr = 1
+	ozAsStr = 1
+	gAsStr = 28.35
+	lbAsStr = 1
+	kgAsStr = 0.45
+	
