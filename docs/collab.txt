@@ -1,13 +1,13 @@
+Assignment 9
+
 Cover Page:
 
 Nelson Raley
 Gabriel Bartholomäus
 Michael Pham
 
-Version 1.3 Collaboration Summary:
+Gabriel: 1A & 1B
 
-Gabriel formulated the user stories and planned strategy for in what order things should be done, as well as providing good insight on the tests.
+Michael: 1C & 1D
 
-Nelson implemented the tests from the user stories, and made sure they worked properly by updating the program.
-
-Michael added some more user stories and helped with implementation of the tests.
+Nelson: 1E & 1F (Also volunteered to do 1G and then coudln't figure it out before the due date.)
