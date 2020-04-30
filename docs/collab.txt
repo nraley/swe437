@@ -1,4 +1,4 @@
-Assignment 9
+Assignment 10
 
 Cover Page:
 
@@ -6,8 +6,8 @@ Nelson Raley
 Gabriel Bartholomäus
 Michael Pham
 
-Gabriel: 1A & 1B
+Gabriel: 
 
-Michael: 1C & 1D
+Michael: 
 
-Nelson: 1E & 1F (Also volunteered to do 1G and then coudln't figure it out before the due date.)
+Nelson: Problem 1.
