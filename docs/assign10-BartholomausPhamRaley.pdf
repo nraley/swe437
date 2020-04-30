@@ -1,0 +1,12 @@
+1.
+
+r = rain
+u = umbrella
+t = temperature in F
+j = jacket
+
+r = u
+r ^ (t < 70) = j
+
+2. a.
+
