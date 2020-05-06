@@ -4,9 +4,11 @@
 // JUnit for Thermostat.java
 //
 // NOT COMPLETE (SEPT 2014)
+package app;
 
 import org.junit.*;
 import static org.junit.Assert.*;
+import app.*;
 
 public class ThermostatTest
 {
@@ -78,4 +80,66 @@ public class ThermostatTest
       // Run the test
       assertTrue (thermo.turnHeaterOn (settings));
    }
+
+   @Test public void testoverrideTrue()   //tests override true and regulator false
+   {
+      // Partial test for method turnHeaterOn() in class Thermostat
+      // Criterion: pverride
+      // Value: True
+      // Predicate: lines 37-39
+      // Expected Output: true
+
+      // Instantiate needed objects
+      thermo   = new Thermostat();
+      settings = new ProgrammedSettings();
+      // Setting internal variable dTemp
+      settings.setSetting (Period.MORNING, DayType.WEEKDAY, 69);
+      thermo.setPeriod (Period.MORNING);
+      thermo.setDay (DayType.WEEKDAY);
+      // Clause a: curTemp < dTemp - thresholdDiff : true
+      thermo.setCurrentTemp (70);
+      thermo.setThresholdDiff (5);
+      // Clause b: Override : true
+      thermo.setOverride (true);
+      thermo.setRegulator(true);
+      // Clause c: curTemp < overTemp - thresholdDiff : true
+      thermo.setOverTemp (68);
+      // Clause d: timeSinceLastRun.greaterThan (minLag) : true
+      thermo.setMinLag (10);
+      thermo.setTimeSinceLastRun (12);
+      // Run the test
+      thermo.turnHeaterOn (settings);
+      assertTrue (thermo.getRunTime() == 2);
+   }
+
+//   @Test public void testoverrideFalse()  //tests override false and regulator true
+//   {
+//      // Partial test for method turnHeaterOn() in class Thermostat
+//      // Criterion: override
+//      // Value: True
+//      // Predicate: lines 37-39
+//      // Expected Output: true
+//
+//      // Instantiate needed objects
+//      thermo   = new Thermostat();
+//      settings = new ProgrammedSettings();
+//      // Setting internal variable dTemp
+//      settings.setSetting (Period.MORNING, DayType.WEEKDAY, 69);
+//      thermo.setPeriod (Period.MORNING);
+//      thermo.setDay (DayType.WEEKDAY);
+//      // Clause a: curTemp < dTemp - thresholdDiff : true
+//      thermo.setCurrentTemp (68);
+//      thermo.setThresholdDiff (5);
+//      // Clause b: Override : true
+//      thermo.setOverride (false);
+//      thermo.setRegulator(true);
+//      // Clause c: curTemp < overTemp - thresholdDiff : true
+//      thermo.setOverTemp (70);
+//      // Clause d: timeSinceLastRun.greaterThan (minLag) : true
+//      thermo.setMinLag (10);
+//      thermo.setTimeSinceLastRun (12);
+//      // Run the test
+//      thermo.turnHeaterOn(settings);
+//      assertTrue (thermo.getRunTime() == 1);
+//   }
 }
