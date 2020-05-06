@@ -81,6 +81,7 @@ public class ThermostatTest
       assertTrue (thermo.turnHeaterOn (settings));
    }
 
+   // Test passes
    @Test public void testoverrideTrue()   //tests override true and regulator true
    {
       // Test for method turnHeaterOn() in class Thermostat
@@ -112,6 +113,8 @@ public class ThermostatTest
       assertTrue (thermo.getRunTime() == 1);
    }
 
+
+   // Test fails due to line 36, timeNeeded does not use ablsolute values, so negative time is allowed
    @Test public void testoverrideFalse()  //tests override false and regulator true
    {
       // Test for method turnHeaterOn() in class Thermostat
