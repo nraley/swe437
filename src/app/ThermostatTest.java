@@ -83,11 +83,11 @@ public class ThermostatTest
 
    @Test public void testoverrideTrue()   //tests override true and regulator true
    {
-      // Partial test for method turnHeaterOn() in class Thermostat
-      // Criterion: override
-      // Value: True
-      // Predicate: lines 37-39
-      // Expected Output: true
+      // Test for method turnHeaterOn() in class Thermostat
+      // Criterion: override, regulator
+      // Value: True, True
+      // Predicate: lines 37
+      // Expected Output: 1
 
       // Instantiate needed objects
       thermo   = new Thermostat();
@@ -101,46 +101,43 @@ public class ThermostatTest
       thermo.setThresholdDiff (5);
       // Clause b: Override : true
       thermo.setOverride (true);
-      thermo.setRegulator(true);
-      // Clause c: curTemp < overTemp - thresholdDiff : true
+      thermo.setRegulator (true);
+      // Clause c: curTemp < overTemp - thresholdDiff : false
       thermo.setOverTemp (68);
       // Clause d: timeSinceLastRun.greaterThan (minLag) : true
       thermo.setMinLag (10);
       thermo.setTimeSinceLastRun (12);
       // Run the test
       thermo.turnHeaterOn (settings);
-      System.out.println(thermo.getRunTime());
       assertTrue (thermo.getRunTime() == 1);
    }
 
-//   @Test public void testoverrideFalse()  //tests override false and regulator true
-//   {
-//      // Partial test for method turnHeaterOn() in class Thermostat
-//      // Criterion: override
-//      // Value: True
-//      // Predicate: lines 37-39
-//      // Expected Output: true
-//
-//      // Instantiate needed objects
-//      thermo   = new Thermostat();
-//      settings = new ProgrammedSettings();
-//      // Setting internal variable dTemp
-//      settings.setSetting (Period.MORNING, DayType.WEEKDAY, 69);
-//      thermo.setPeriod (Period.MORNING);
-//      thermo.setDay (DayType.WEEKDAY);
-//      // Clause a: curTemp < dTemp - thresholdDiff : true
-//      thermo.setCurrentTemp (68);
-//      thermo.setThresholdDiff (5);
-//      // Clause b: Override : true
-//      thermo.setOverride (false);
-//      thermo.setRegulator(true);
-//      // Clause c: curTemp < overTemp - thresholdDiff : true
-//      thermo.setOverTemp (70);
-//      // Clause d: timeSinceLastRun.greaterThan (minLag) : true
-//      thermo.setMinLag (10);
-//      thermo.setTimeSinceLastRun (12);
-//      // Run the test
-//      thermo.turnHeaterOn(settings);
-//      assertTrue (thermo.getRunTime() == 1);
-//   }
+   @Test public void testoverrideFalse()  //tests override false and regulator true
+   {
+      // Test for method turnHeaterOn() in class Thermostat
+      // Criterion: override, regulator
+      // Value: False, True
+      // Predicate: lines 37
+      // Expected Output: 6
+
+      // Instantiate needed objects
+      thermo   = new Thermostat();
+      settings = new ProgrammedSettings();
+      // Setting internal variable dTemp and getting to line 37
+      settings.setSetting (Period.MORNING, DayType.WEEKDAY, 69);
+      thermo.setPeriod (Period.MORNING);
+      thermo.setDay (DayType.WEEKDAY);
+      thermo.setCurrentTemp (63);
+      thermo.setThresholdDiff (5);
+      thermo.setOverTemp (70);
+      thermo.setMinLag (10);
+      thermo.setTimeSinceLastRun (12);
+      // Clause a: Override : false
+      thermo.setOverride (false);
+      // Clause b: Regulator : true
+      thermo.setRegulator (true);
+      // Run the test
+      thermo.turnHeaterOn(settings);
+      assertTrue (thermo.getRunTime() == 6);
+   }
 }
