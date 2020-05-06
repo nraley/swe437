@@ -3,6 +3,7 @@
 // Programmable Thermostat
 // Chapter 8
 // See ThermostatTest.java for JUnit tests
+package app;
 
 import java.io.*;
 import java.util.*;
