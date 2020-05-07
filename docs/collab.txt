@@ -4,8 +4,8 @@ Nelson Raley
 Gabriel Bartholomäus
 Michael Pham
 
-Gabriel: 
+Gabriel: Made testovverideFalse() test
 
-Michael: 
+Michael: Reviewed the code
 
 Nelson: Imported and organized libraries for assignment, made testoverrideTrue() test.
