@@ -4,7 +4,7 @@ Nelson Raley
 Gabriel Bartholomäus
 Michael Pham
 
-Gabriel: Made testovverideFalse() test
+Gabriel: Made testovverideFalse() test and fixed comments
 
 Michael: Reviewed the code
 
